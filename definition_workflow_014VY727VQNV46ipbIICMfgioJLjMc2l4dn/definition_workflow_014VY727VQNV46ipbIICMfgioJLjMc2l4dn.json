@@ -1,0 +1,106 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_014VY727VQNV46ipbIICMfgioJLjMc2l4dn",
+    "name": "Parent WF Non Atomic - DL",
+    "title": "Parent WF Non Atomic - DL",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Parent WF Non Atomic - DL",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_014VY7HWPQK1A6lpodTLHQYVxkuqOptcU5h",
+        "name": "Child  WF Non Atomic - DL ",
+        "title": "Child  WF Non Atomic - DL ",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Child  WF Non Atomic - DL ",
+          "input": {},
+          "target": {
+            "no_target": true,
+            "override_workflow_target": false
+          },
+          "workflow_id": "definition_workflow_014VY5TSKG1IG6Gvr8bLyU6AIZJLdF5u1ZM"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_014VY7TTPINQZ1Hja5X1GnW4ElOJE5xWRT7",
+        "name": "To Upper",
+        "title": "To Upper",
+        "type": "core.string2upper",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Upper",
+          "source": "$activity.definition_activity_014VY7HWPQK1A6lpodTLHQYVxkuqOptcU5h.output.end_time$"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_014VY5TSKG1IG6Gvr8bLyU6AIZJLdF5u1ZM",
+        "name": "Child  WF Non Atomic - DL ",
+        "title": "Child  WF Non Atomic - DL ",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": null,
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "Child  WF Non Atomic - DL ",
+          "favorite": false,
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "specify_on_workflow_start": false
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_014VY6MTU69WS5Tbjctackdogt1oKm6S16i",
+            "name": "Sleep",
+            "title": "Sleep",
+            "type": "core.sleep",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Sleep",
+              "sleep_interval": 1
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+        ]
+      }
+    }
+  ]
+}
