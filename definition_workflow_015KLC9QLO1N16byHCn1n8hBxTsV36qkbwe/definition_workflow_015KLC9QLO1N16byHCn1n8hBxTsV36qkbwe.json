@@ -1,0 +1,66 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_015KLC9QLO1N16byHCn1n8hBxTsV36qkbwe",
+    "name": "WF with input variable ",
+    "title": "WF with input variable ",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "This is input string:",
+          "scope": "input",
+          "name": "My string",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_015KLDB2R3IX53KYG158ew1LW17VdUU0aLy",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Output string:",
+          "scope": "output",
+          "name": "Output String",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_015KLEZQKZNCK5OSCSul6kIw9kT69iGgwo8",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "WF with input variable ",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_015KLCW9DUSO44GlPVmbAuYYAmHyyYVMAQm",
+        "name": "To Upper",
+        "title": "To Upper",
+        "type": "core.string2upper",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "To Upper",
+          "source": "$workflow.definition_workflow_015KLC9QLO1N16byHCn1n8hBxTsV36qkbwe.input.variable_workflow_015KLDB2R3IX53KYG158ew1LW17VdUU0aLy$"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
