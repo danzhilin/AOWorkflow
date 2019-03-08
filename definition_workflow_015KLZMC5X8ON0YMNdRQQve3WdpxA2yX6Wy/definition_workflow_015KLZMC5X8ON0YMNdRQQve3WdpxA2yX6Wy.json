@@ -9,21 +9,21 @@
       {
         "schema_id": "datatype.secure_string",
         "properties": {
-          "scope": "local",
-          "name": "local sec string",
-          "type": "datatype.secure_string"
-        },
-        "unique_name": "variable_workflow_015KNLCUCZ1954Acfn1w8lPflJ86iAFuEMx",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.secure_string",
-        "properties": {
           "scope": "input",
           "name": "input sec string",
           "type": "datatype.secure_string"
         },
         "unique_name": "variable_workflow_015KNL4DMLHN04LoQmxTI0lq07jXq3H8sKD",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "scope": "local",
+          "name": "local sec string",
+          "type": "datatype.secure_string"
+        },
+        "unique_name": "variable_workflow_015KNLCUCZ1954Acfn1w8lPflJ86iAFuEMx",
         "object_type": "variable_workflow"
       }
     ],
@@ -44,6 +44,28 @@
     "object_type": "definition_workflow",
     "actions": [
       {
+        "unique_name": "definition_activity_015LDVTYL36GH1WUNmLYm8AlbFteh4znpFq",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "JSONPath Query",
+          "input_json": "{}",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "",
+              "jsonpath_query_name": "",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
         "unique_name": "definition_activity_015KLZN1A21OS3SW96O7ORe8LGP1hCj5PBV",
         "name": "To Upper",
         "title": "To Upper",
@@ -55,6 +77,42 @@
           "source": "$workflow.definition_workflow_015KLZMC5X8ON0YMNdRQQve3WdpxA2yX6Wy.output.start_time$"
         },
         "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_015L9EWDV633J3TUTYMgVL1QdCl3MnACehJ",
+        "name": "Parallel Block",
+        "title": "Parallel Block",
+        "type": "logic.parallel",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Parallel Block"
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_015L9EWGIFPN37VgcBeK170toDkLRJBPwP0",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "display_name": "Parallel Branch"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_015L9EWHIQ9SA0vdIwSqbwtvIH8kUXOFIJD",
+            "name": "Parallel Branch",
+            "title": "Parallel Branch",
+            "type": "logic.parallel_block",
+            "base_type": "activity",
+            "properties": {
+              "display_name": "Parallel Branch"
+            },
+            "object_type": "definition_activity"
+          }
+        ]
       }
     ],
     "categories": [
