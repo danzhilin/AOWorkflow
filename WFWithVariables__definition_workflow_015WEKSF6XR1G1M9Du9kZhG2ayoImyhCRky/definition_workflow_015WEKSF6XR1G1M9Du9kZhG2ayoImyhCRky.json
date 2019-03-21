@@ -1,0 +1,66 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_015WEKSF6XR1G1M9Du9kZhG2ayoImyhCRky",
+    "name": "WF with variables - DL",
+    "title": "WF with variables - DL",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "scope": "local",
+          "name": "Local secure",
+          "type": "datatype.secure_string"
+        },
+        "unique_name": "variable_workflow_015WELFWN8DNH6CQ331pPWOU7ADNQ87XxGt",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "scope": "output",
+          "name": "Output secure string",
+          "type": "datatype.secure_string",
+          "description": "output secure string"
+        },
+        "unique_name": "variable_workflow_015WELTB4NRPQ5klhYjCDXGWiumX9p6Svj7",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "WF with variables - DL",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      },
+      "timeout": 3600
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_015WEL2876HJI2JRf7cCsJmR799wMOkESRE",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "sleep_interval": 1
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
