@@ -1,0 +1,31 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_0162EMILHSHYH3yOMWx341CFaqYeSl2jKZT",
+    "name": "atomic wf no action - dl",
+    "title": "atomic wf no action - dl",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "atomic_group": "Workflows",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "description": "atomic wf no action - dl",
+      "display_name": "atomic wf no action - dl",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      },
+      "timeout": 3600
+    },
+    "object_type": "definition_workflow",
+    "categories": [
+      "category_01FzsThUQ3yXAswxOItEqLAIiGLEPlIt0"
+    ]
+  }
+}
