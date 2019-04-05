@@ -1,0 +1,138 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_0165NDFZ9E1C97ez1sUBvmMMSkdTbQsPY8l",
+    "name": "wf - dl",
+    "title": "wf - dl",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "local str",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_0165NDV7L40CN1oLB2X7LMK3tEDms5ZlzoG",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_0165N4GBUN7US6WO8pnXDRcC6wccqEVP0SH",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "Name": "local",
+                "Price": "999"
+              }
+            }
+          ],
+          "scope": "local",
+          "name": "local table",
+          "type": "datatype.table"
+        },
+        "unique_name": "variable_workflow_0165SI4LNO3HP05uD83O3OtN9VzcIzUCuIO",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "wf - dl",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      },
+      "timeout": 3600
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0165NE4KMDLLG1ppEdcck9r4SHhe5jxiDV9",
+        "name": "atomic wf - output table - dl",
+        "title": "atomic wf - output table - dl",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "atomic": {
+            "atomic_group": "Workflows",
+            "is_atomic": true
+          },
+          "continue_on_failure": false,
+          "delete_workflow_instance": false,
+          "display_name": "atomic wf - output table - dl",
+          "favorite": false,
+          "input": {},
+          "target": {
+            "execute_on_target_group": false,
+            "execute_on_workflow_target": false,
+            "no_target": true,
+            "override_workflow_target": false,
+            "specify_on_workflow_start": false
+          },
+          "timeout": 3600,
+          "workflow_id": "definition_workflow_0165NCI0JIZ5G6rhnKDW8Nj3M6y938Ge1eC"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_0165SDQ44PING2rzeCNyukkXXERASduyRxx",
+        "name": "Set Variables",
+        "title": "Set Variables",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Set Variables",
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_0165NDFZ9E1C97ez1sUBvmMMSkdTbQsPY8l.local.variable_workflow_0165NDV7L40CN1oLB2X7LMK3tEDms5ZlzoG$",
+              "variable_value_new": "$activity.definition_activity_0165NE4KMDLLG1ppEdcck9r4SHhe5jxiDV9.output.variable_workflow_0165ND3OXDDR06LAGZuOM5Mt90t18riK5U6[-1].Name$"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "table_types": {
+    "tabletype_0165N4GBUN7US6WO8pnXDRcC6wccqEVP0SH": {
+      "unique_name": "tabletype_0165N4GBUN7US6WO8pnXDRcC6wccqEVP0SH",
+      "data_type": "datatype.tabletype",
+      "display_name": "Table Type - DL",
+      "description": "Table Type : name and price",
+      "max_rows": 256,
+      "max_columns": 256,
+      "max_column_size": 1024,
+      "max_table_size": 26000,
+      "columns": [
+        {
+          "maxLength": 100,
+          "name": "Name",
+          "title": "Name",
+          "type": "string"
+        },
+        {
+          "maxLength": 100,
+          "name": "Price",
+          "title": "Price",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_0165NCI0JIZ5G6rhnKDW8Nj3M6y938Ge1eC"
+  ]
+}
