@@ -1,0 +1,98 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_0165NCI0JIZ5G6rhnKDW8Nj3M6y938Ge1eC",
+    "name": "atomic wf - output table - dl",
+    "title": "atomic wf - output table - dl",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "tabletype_0165N4GBUN7US6WO8pnXDRcC6wccqEVP0SH",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "Name": "aaa",
+                "Price": "111"
+              }
+            },
+            {
+              "column_data": {
+                "Name": "bbb",
+                "Price": "222"
+              }
+            }
+          ],
+          "scope": "output",
+          "name": "my output table",
+          "type": "datatype.table"
+        },
+        "unique_name": "variable_workflow_0165ND3OXDDR06LAGZuOM5Mt90t18riK5U6",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "atomic_group": "Workflows",
+        "is_atomic": true
+      },
+      "delete_workflow_instance": false,
+      "display_name": "atomic wf - output table - dl",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      },
+      "timeout": 3600
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0165NCPW41VRW0wYidUPxIIzjcWrXPC0QqB",
+        "name": "Sleep",
+        "title": "Sleep",
+        "type": "core.sleep",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Sleep",
+          "sleep_interval": 1
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "table_types": {
+    "tabletype_0165N4GBUN7US6WO8pnXDRcC6wccqEVP0SH": {
+      "unique_name": "tabletype_0165N4GBUN7US6WO8pnXDRcC6wccqEVP0SH",
+      "data_type": "datatype.tabletype",
+      "display_name": "Table Type - DL",
+      "description": "Table Type : name and price",
+      "max_rows": 256,
+      "max_columns": 256,
+      "max_column_size": 1024,
+      "max_table_size": 26000,
+      "columns": [
+        {
+          "maxLength": 100,
+          "name": "Name",
+          "title": "Name",
+          "type": "string"
+        },
+        {
+          "maxLength": 100,
+          "name": "Price",
+          "title": "Price",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
